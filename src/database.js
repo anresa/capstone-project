@@ -1,7 +1,5 @@
 import {nanoid} from 'nanoid';
 
-console.log(products[0].id);
-
 const products = [
   {
     productId: nanoid(),
