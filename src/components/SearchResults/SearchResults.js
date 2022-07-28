@@ -1,4 +1,3 @@
-import React from 'react';
 import './SearchResults.css';
 
 export default function SearchResults({products, onSelectProduct}) {
