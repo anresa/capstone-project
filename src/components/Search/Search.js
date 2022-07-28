@@ -1,16 +1,16 @@
 import {useState} from 'react';
 import './Search.css';
 
-export default function Search() {
-  const [product, setProduct] = useState([]);
+export function Search({onSearchTermChange}) {
+  const [searchTerm, setSearchTerm] = useState('');
 
   function submitHandler(event) {
     event.preventDefault();
-    setProduct(event.target.value);
+    onSearchTermChange(searchTerm);
   }
 
   function handleChange(event) {
-    const product = event.target.value;
+    setSearchTerm(event.target.value);
   }
 
   return (
@@ -19,7 +19,7 @@ export default function Search() {
         <form onSubmit={submitHandler}>
           <label>
             Search for Mismo:
-            <input className="searchbar" value={product} onChange={handleChange} />
+            <input className="searchbar" value={searchTerm} onChange={handleChange} />
           </label>
           <button>Mismo!</button>
         </form>
