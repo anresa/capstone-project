@@ -11,6 +11,7 @@ export function Search({onSearchTermChange}) {
 
   function handleChange(event) {
     setSearchTerm(event.target.value);
+    onSearchTermChange(searchTerm);
   }
 
   return (
