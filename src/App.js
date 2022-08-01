@@ -1,38 +1,21 @@
-import {useState} from 'react';
 import './App.css';
-import Header from './components/Header/Header';
-import {Search} from './components/Search/Search';
-// import Navigation from './components/Navigation/Navigation';
-import SearchResults from './components/SearchResults/SearchResults';
-import productsDatabase from './database.js';
+import Home from './pages/Home.js';
+import Add from './pages/Add.js';
+import Categories from './pages/Categories.js';
+import Favorites from './pages/Favorites.js';
+import Profile from './pages/Profile.js';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 export default function App() {
-  const [searchTerm, setSearchTerm] = useState('');
-  function handleSearchTermChange(changedTerm) {
-    setSearchTerm(changedTerm);
-  }
-
-  const filteredProducts = productsDatabase.reduce((prev, cur) => {
-    return [
-      ...prev,
-      ...cur.productSet
-        .filter(item => item.productName.toLowerCase().startsWith(searchTerm.toLocaleLowerCase()))
-        .map(item => {
-          return {...item, productSetId: cur.productSetId};
-        }),
-    ];
-  }, []);
   return (
-    <>
-      <Header />
-      <Search onSearchTermChange={handleSearchTermChange} />
-      <SearchResults
-        products={filteredProducts}
-        onSelectProduct={product => {
-          alert(JSON.stringify(product));
-        }}
-      />
-      {/* <Navigation /> */}
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/add" element={<Add />} />
+        <Route path="/categories" element={<Categories />} />
+        <Route path="/favorites" element={<Favorites />} />
+        <Route path="/profile" element={<Profile />} />
+      </Routes>
+    </Router>
   );
 }
