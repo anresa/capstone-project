@@ -1,54 +1,59 @@
 import './Navigation.css';
+import {NavLink} from 'react-router-dom';
 import {IoIosAddCircleOutline} from 'react-icons/io';
 import {IoCopyOutline} from 'react-icons/io5';
 import {IoIosMenu} from 'react-icons/io';
 import {IoIosHeartEmpty} from 'react-icons/io';
 import {IoPersonOutline} from 'react-icons/io5';
 
-const list = document.querySelectorAll('.list');
-function activeLink() {
-  list.forEach(item => item.classList.remove('active'));
-  this.classList.add('active');
-}
-list.forEach(item => item.addEventListener('click', activeLink));
+// const list = document.querySelectorAll('.list');
+// function activeLink() {
+//   list.forEach(item => item.classList.remove('active'));
+//   this.classList.add('active');
+// }
+// list.forEach(item => item.addEventListener('click', activeLink));
 
 export default function Navigation() {
+  let activeStyle = {
+    textDecoration: 'underline',
+  };
+
   return (
     <>
       <div className="navigation">
         <section className="navigation-box">
           <ul>
-            <li className="list active">
-              <a href="/add">
+            <li>
+              <NavLink to="add" style={({isActive}) => (isActive ? activeStyle : undefined)}>
                 <IoIosAddCircleOutline className="icon" />
                 <span className="text">Add</span>
-              </a>
+              </NavLink>
             </li>
-            <li className="list">
-              <a href="/categories">
+            <li>
+              <NavLink to="categories" style={({isActive}) => (isActive ? activeStyle : undefined)}>
                 <IoCopyOutline className="icon" />
                 <span className="text">Categories</span>
-              </a>
+              </NavLink>
             </li>
-            <li className="list">
-              <a href="/">
+            <li>
+              <NavLink to="/" style={({isActive}) => (isActive ? activeStyle : undefined)}>
                 <IoIosMenu className="icon" />
                 <span className="text">Home</span>
-              </a>
+              </NavLink>
             </li>
-            <li className="list">
-              <a href="/favorites">
+            <li>
+              <NavLink to="favorites" style={({isActive}) => (isActive ? activeStyle : undefined)}>
                 <IoIosHeartEmpty className="icon" />
                 <span className="text">Favorites</span>
-              </a>
+              </NavLink>
             </li>
-            <li className="list">
-              <a href="/profile">
+            <li>
+              <NavLink to="profile" style={({isActive}) => (isActive ? activeStyle : undefined)}>
                 <IoPersonOutline className="icon" />
                 <span className="text">Profile</span>
-              </a>
+              </NavLink>
             </li>
-            <div className="indicator"></div>
+            {/* <div className="indicator"></div> */}
           </ul>
         </section>
       </div>

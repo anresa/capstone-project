@@ -4,6 +4,8 @@
   align-items: center;
   position: fixed;
   top: 580px;
+  width: 375px;
+  background-color: #004259;
 }
 
 .navigation-box {
@@ -17,7 +19,6 @@
 
 .navigation-box ul {
   display: flex;
-  width: 337px;
 }
 
 .navigation-box ul li {
@@ -48,6 +49,8 @@
   text-align: center;
   transition: 0.5s;
 }
+
+/*  active starts */
 
 .navigation-box ul li.active a .icon {
   transform: translateY(-35px);
@@ -103,7 +106,7 @@
   box-shadow: -1px -10px 0 0 white;
 }
 
-.navigation-box ul li:nth-child(1).active ~ .indicator {
+/* .navigation-box ul li:nth-child(1).active ~ .indicator {
   transform: translateX(calc(67px * 0));
 }
 
@@ -121,4 +124,4 @@
 
 .navigation-box ul li:nth-child(5).active ~ .indicator {
   transform: translateX(calc(67px * 4));
-}
+} */
