@@ -2,7 +2,6 @@ import {useState} from 'react';
 import '../App.css';
 import Header from '../components/Header/Header.js';
 import {Search} from '../components/Search/Search';
-// import Navigation from './components/Navigation/Navigation';
 import SearchResults from '../components/SearchResults/SearchResults';
 import productsDatabase from '../database.js';
 
@@ -32,7 +31,6 @@ export default function Home() {
           alert(JSON.stringify(product));
         }}
       />
-      {/* <Navigation /> */}
     </>
   );
 }

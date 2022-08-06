@@ -1,3 +1,3 @@
 export default function Add() {
-  return <div>Add</div>;
+  return <h1>Add</h1>;
 }

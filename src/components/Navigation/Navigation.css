@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   position: fixed;
-  top: 580px;
+  top: 590px;
   width: 375px;
   background-color: #004259;
 }
@@ -50,36 +50,33 @@
   transition: 0.5s;
 }
 
-/*  active starts */
+/* .navigation-box .indicator .icon {
+  transform: translateY(-1px);
+} */
 
-.navigation-box ul li.active a .icon {
-  transform: translateY(-35px);
-}
-
-.navigation-box ul li a .text {
+.navigation-box .text {
   padding-top: 15px;
   position: absolute;
   color: white;
   font-size: 0.8em;
-  transition: 0.5s;
+  /* transition: 0.5s; */
   opacity: 0;
-  transform: translateY(20px);
+  /* transform: translateY(20px); */
 }
 
-.navigation-box ul li.active a .text {
+.navigation-box .indicator .text {
   opacity: 1;
-  transform: translateY(10px);
+  transform: translateY(49px);
 }
 
 .indicator {
   position: absolute;
-  top: -27%;
+  bottom: 57px;
   width: 67px;
   height: 67px;
   background-color: #9cb4bf;
   border-radius: 50%;
   border: 6px solid white;
-  transition: 0.5s;
 }
 
 .indicator::before {
