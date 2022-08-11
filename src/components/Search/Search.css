@@ -45,6 +45,7 @@
   line-height: 16px;
   color: #002635;
   padding-left: 29px;
+  outline: none;
 }
 
 .dropdown {
@@ -72,14 +73,11 @@
   top: 114px;
   border-radius: 3px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
 }
 
 .submit-button:active {
   border: white 1px;
-}
-
-.submit-button:hover {
-  background-color: #9cb4bf;
 }
 
 .exit-icon {
@@ -88,6 +86,7 @@
   top: 76px;
   font-size: 1.3em;
   color: #002635;
+  cursor: pointer;
 }
 
 .search-icon {
@@ -96,4 +95,8 @@
   top: 77px;
   font-size: 1em;
   color: #002635;
+}
+
+button {
+  border: none;
 }
