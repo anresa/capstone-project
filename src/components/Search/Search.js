@@ -2,6 +2,9 @@ import {useState, useEffect} from 'react';
 import {nanoid} from 'nanoid';
 import './Search.css';
 import SearchResults from '../SearchResults/SearchResults';
+import {ReactComponent as CTA} from './mismo-cta.svg';
+import {IoCloseOutline} from 'react-icons/io5';
+import {IoSearchOutline} from 'react-icons/io5';
 
 export function Search({productsDatabase, onSearchTermChange}) {
   const [searchTerm, setSearchTerm] = useState('');
@@ -51,26 +54,50 @@ export function Search({productsDatabase, onSearchTermChange}) {
 
   return (
     <>
+      <h2 className="search-title">Search</h2>
       <section className="search">
         <form onSubmit={submitHandler}>
-          <select onChange={onHandleChangeLanguage}>
-            <option value="Germany">Germany</option>
-            <option value="USA">USA</option>
-            <option value="Mexico">Mexico</option>
-          </select>
-          <label>
-            Search for Mismo:
-            <input list="productList" type={'text'} className="searchbar" value={searchTerm} onChange={handleChange} />
-          </label>
+          <input
+            list="productList"
+            type={'text'}
+            className="searchbar"
+            name="searchbar"
+            value={searchTerm}
+            onChange={handleChange}
+          />
           <datalist id="productList">
             {productsDatas.map(item => {
               return <option key={nanoid()}>{item.productName}</option>;
             })}
           </datalist>
-
-          <button>Mismo!</button>
+          <select className="dropdown" name="dropdown" onChange={onHandleChangeLanguage}>
+            <option value="Australia">Australia</option>
+            <option value="Belgium">Belgium</option>
+            <option value="Canada">Canada</option>
+            <option value="Canary Islands">Canary Islands</option>
+            <option value="England">England</option>
+            <option value="Fiji">Fiji</option>
+            <option value="France">France</option>
+            <option value="Germany">Germany</option>
+            <option value="Greece">Greece</option>
+            <option value="Korea">Korea</option>
+            <option value="Malta">Malta</option>
+            <option value="Mexico">Mexico</option>
+            <option value="Netherlands">Netherlands</option>
+            <option value="New Zealand">New Zealand</option>
+            <option value="Norway">Norway</option>
+            <option value="Scotland">Scotland</option>
+            <option value="USA">USA</option>
+          </select>
+          <IoSearchOutline className="search-icon" />
+          <button>
+            {''}
+            <CTA className="submit-button" />
+          </button>
         </form>
-        <button onClick={() => setSearchTerm('')}>X</button>
+        <button onClick={() => setSearchTerm('')}>
+          <IoCloseOutline className="exit-icon" />
+        </button>
       </section>
       {openProductCard === true ? (
         <SearchResults setOpenProductCard={setOpenProductCard} searchFinalResult={searchFinalResult}></SearchResults>

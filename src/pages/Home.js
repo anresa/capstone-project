@@ -2,6 +2,7 @@ import {useState} from 'react';
 import '../App.css';
 import Header from '../components/Header/Header.js';
 import {Search} from '../components/Search/Search';
+import CategoriesCard from '../components/CategoriesCard/CategoriesCard.js';
 import productsDatabase from '../database.js';
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
     <>
       <Header />
       <Search productsDatabase={productsDatabase} onSearchTermChange={handleSearchTermChange} />
+      <CategoriesCard />
     </>
   );
 }

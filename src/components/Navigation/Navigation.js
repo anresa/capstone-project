@@ -2,9 +2,9 @@ import './Navigation.css';
 import {NavLink} from 'react-router-dom';
 import {IoIosAddCircleOutline} from 'react-icons/io';
 import {IoCopyOutline} from 'react-icons/io5';
-import {IoIosMenu} from 'react-icons/io';
 import {IoIosHeartEmpty} from 'react-icons/io';
 import {IoPersonOutline} from 'react-icons/io5';
+import homeIcon from './mismo-icon.svg';
 
 export default function Navigation() {
   const activeStyle = 'indicator';
@@ -28,7 +28,7 @@ export default function Navigation() {
             </li>
             <li>
               <NavLink to="/" className={({isActive}) => (isActive ? activeStyle : undefined)}>
-                <IoIosMenu className="icon" />
+                <img src={homeIcon} className="home-icon" />
                 <span className="text">Home</span>
               </NavLink>
             </li>
