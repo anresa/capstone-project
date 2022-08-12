@@ -1,8 +1,11 @@
 import './SearchResults.css';
 import {IoIosHeartEmpty} from 'react-icons/io';
 import {IoChevronBackOutline} from 'react-icons/io5';
+import {IoMdHeart} from 'react-icons/io';
+import {useState} from 'react';
 
-export default function SearchResults({setOpenProductCard, searchFinalResult}) {
+export default function SearchResults({setOpenProductCard, searchFinalResult, handleBookmark}) {
+  const [bookMarked, setBookMarked] = useState(false);
   return (
     <div className="result-card">
       <button
@@ -17,8 +20,23 @@ export default function SearchResults({setOpenProductCard, searchFinalResult}) {
         <h3 className="result-product">{searchFinalResult.productName}</h3>
         <h4 className="result-country">{searchFinalResult.productCountry}</h4>
         <img className="result-image" src={searchFinalResult.productImage} alt={searchFinalResult.productName}></img>
-
-        <IoIosHeartEmpty className="icon-favorite" />
+        {bookMarked === true ? (
+          <IoMdHeart
+            className="icon-favorite"
+            onClick={() => {
+              handleBookmark(searchFinalResult.productId);
+              setBookMarked(false);
+            }}
+          />
+        ) : (
+          <IoIosHeartEmpty
+            className="icon-favorite"
+            onClick={() => {
+              handleBookmark(searchFinalResult.productId);
+              setBookMarked(true);
+            }}
+          />
+        )}
       </section>
     </div>
   );

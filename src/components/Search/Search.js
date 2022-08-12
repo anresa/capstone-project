@@ -6,7 +6,7 @@ import {ReactComponent as CTA} from './mismo-cta.svg';
 import {IoCloseOutline} from 'react-icons/io5';
 import {IoSearchOutline} from 'react-icons/io5';
 
-export function Search({productsDatabase, onSearchTermChange}) {
+export function Search({productsDatabase, onSearchTermChange, handleBookmark}) {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchFinalResult, setSearchFinalResult] = useState('');
   const [openProductCard, setOpenProductCard] = useState(false);
@@ -100,7 +100,11 @@ export function Search({productsDatabase, onSearchTermChange}) {
         </button>
       </section>
       {openProductCard === true ? (
-        <SearchResults setOpenProductCard={setOpenProductCard} searchFinalResult={searchFinalResult}></SearchResults>
+        <SearchResults
+          setOpenProductCard={setOpenProductCard}
+          searchFinalResult={searchFinalResult}
+          handleBookmark={handleBookmark}
+        ></SearchResults>
       ) : (
         ''
       )}
