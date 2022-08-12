@@ -5,7 +5,7 @@ import {Search} from '../components/Search/Search';
 import CategoriesCard from '../components/CategoriesCard/CategoriesCard.js';
 import productsDatabase from '../database.js';
 
-export default function Home() {
+export default function Home({products, handleBookmark}) {
   const [searchTerm, setSearchTerm] = useState('');
   function handleSearchTermChange(changedTerm) {
     setSearchTerm(changedTerm);
@@ -14,7 +14,12 @@ export default function Home() {
   return (
     <>
       <Header />
-      <Search productsDatabase={productsDatabase} onSearchTermChange={handleSearchTermChange} />
+      <Search
+        productsDatabase={productsDatabase}
+        onSearchTermChange={handleSearchTermChange}
+        products={products}
+        handleBookmark={handleBookmark}
+      />
       <CategoriesCard />
     </>
   );
