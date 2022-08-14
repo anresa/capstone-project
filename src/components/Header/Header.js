@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <>
       <div className="header">
-        <img className="header-picture" src={header} alt="Header Picture" />
+        <img className="header-picture" src={header} alt="A picture of a woman sitting by a lake" />
         <img className="logo" src={logo} alt="Mismo Logo" />
       </div>
     </>
