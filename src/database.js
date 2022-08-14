@@ -43,7 +43,8 @@ const productsDatabase = [
         productId: '79xIXICV',
         productName: 'Daisy Pure & Natural Sour Cream',
         productCountry: 'USA',
-        productImage: 'https://world.openfoodfacts.org/images/products/007/342/000/0240/front_en.10.400.jpg',
+        productImage:
+          'https://product.hstatic.net/1000282430/product/daisy-pure-_-natural-sour-cream---16oz_d242b1c26c144a92b600c16d2ccdf5c8.jpg',
         bookMarked: false,
       },
       {

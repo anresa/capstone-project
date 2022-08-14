@@ -80,6 +80,7 @@ export function Search({productsDatabase, onSearchTermChange, handleBookmark}) {
             <option value="France">France</option>
             <option value="Germany">Germany</option>
             <option value="Greece">Greece</option>
+            <option value="Japan">Japan</option>
             <option value="Korea">Korea</option>
             <option value="Malta">Malta</option>
             <option value="Mexico">Mexico</option>

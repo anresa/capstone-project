@@ -17,8 +17,12 @@
   top: 115px;
   position: absolute;
   float: right;
-  right: 42px;
-  z-index: 90;
+  right: -1px;
+  padding: 2px;
+  padding-left: 10px;
+  padding-right: 42px;
+  background: #d0dae1a0;
+  border-radius: 4px;
 }
 
 .cutout {

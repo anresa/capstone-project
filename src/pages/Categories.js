@@ -1,3 +1,11 @@
+import CategoriesHeader from '../components/SubHeader/CategoriesHeader.js';
+import CategoriesMain from '../components/CategoriesMain/CategoriesMain.js';
+
 export default function Categories() {
-  return <h1>Categories</h1>;
+  return (
+    <>
+      <CategoriesHeader />
+      <CategoriesMain />
+    </>
+  );
 }
