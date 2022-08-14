@@ -1,3 +1,11 @@
+import AddHeader from '../components/SubHeader/AddHeader.js';
+import AddCard from '../components/AddCard/AddCard';
+
 export default function Add() {
-  return <h1>Add</h1>;
+  return (
+    <>
+      <AddHeader />
+      <AddCard />
+    </>
+  );
 }
